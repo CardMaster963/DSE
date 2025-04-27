@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Security.Principal;
 
 namespace DSE
 {
@@ -107,8 +108,9 @@ namespace DSE
                 return (res, res2);
             }
         }
-        public List<Ventas> obtenerVenta(int GridSelectRow)
+        public (List<Ventas>, List<string>) obtenerVenta(int GridSelectRow)
         {
+            List<string> indexVenta = new List<string>();
             List<Ventas> returnThese = new List<Ventas>();
             SqlConnection connection = new SqlConnection(conexionString);
             connection.Open();
@@ -120,22 +122,24 @@ namespace DSE
                 {
                     Ventas venta = new Ventas()
                     {
-                        ID = reader.GetInt32(0),
+                        ID = reader.GetString(0),
                         ID_Evento = reader.GetInt32(1),
                         Fecha = reader.GetDateTime(2),
                         tipo_boleto = reader.GetString(3),
                         cantidad = reader.GetInt32(4),
                         total = reader.GetInt32(5)
+
                     };
                     returnThese.Add(venta);
+                    indexVenta.Add(reader.GetString(0));
                 }
                 connection.Close();
-                return returnThese;
+                return (returnThese, indexVenta) ;
             }
         }
         public List<string> eventoData(int GridSelectRow)
         {
-            List<string> Data = new List<string>(new string[5]);
+            List<string> Data = new List<string>(new string[6]);
             SqlConnection connection = new SqlConnection(conexionString);
             connection.Open();
             SqlCommand sqlCommand = new SqlCommand("select * from eventos where id_evento = @GridSelectRow", connection);
@@ -152,6 +156,8 @@ namespace DSE
                     Data[2] = Convert.ToString(reader.GetInt32(5));
                     Data[3] = Convert.ToString(reader.GetInt32(6));
                     Data[4] = Convert.ToString(reader.GetInt32(7));
+                    DateTime fecha = (reader.GetDateTime(2));
+                    Data[5] = fecha.ToString("dd/MM/yyyy");
 
                 }
                 connection.Close();
@@ -179,6 +185,68 @@ namespace DSE
                 sqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Los datos se han insertado correctamente.", "Éxito");
                 connection.Close();
+        }
+        public void insertarVenta(Ventas venta)
+        {
+            List<string> Data = new List<string>(new string[5]);
+            SqlConnection connection = new SqlConnection(conexionString);
+            connection.Open();
+
+
+            SqlCommand sqlCommand = new SqlCommand(
+                "INSERT INTO ventas VALUES (@ID, @ID_Evento, @Fecha, @tipo_boleto, @cantidad, @total);", connection);
+
+            // Agregar los parámetros con los valores del objeto 'venta'
+            sqlCommand.Parameters.AddWithValue("@ID", venta.ID);
+            sqlCommand.Parameters.AddWithValue("@ID_Evento", venta.ID_Evento);
+            sqlCommand.Parameters.AddWithValue("@Fecha", venta.Fecha);
+            sqlCommand.Parameters.AddWithValue("@tipo_boleto", venta.tipo_boleto);
+            sqlCommand.Parameters.AddWithValue("@cantidad", venta.cantidad);
+            sqlCommand.Parameters.AddWithValue("@total", venta.total);
+
+            sqlCommand.ExecuteNonQuery();
+            MessageBox.Show("Los datos se han insertado correctamente.", "Éxito");
+            connection.Close();
+        }
+        public String ObtenerIDVenta(string Id_evento)
+        {
+            string query = "SELECT MAX(id_venta) FROM ventas WHERE id_evento = @idPrincipal";
+            SqlConnection connection = new SqlConnection(conexionString);
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+                command.Parameters.AddWithValue("@idPrincipal", Id_evento);
+                object result = command.ExecuteScalar();
+                
+
+                if (result == DBNull.Value)
+                {
+                    return Convert.ToString(Convert.ToInt32( Id_evento ) * 10000 + 1);  // El primer ID secundario para este ID principal
+                }
+                else
+                {
+                    // De lo contrario, sumamos 1 al ID secundario máximo encontrado
+                    return Convert.ToString(Convert.ToInt32(result) + 1);
+                }
+                
+            }
+        }
+        public void borrar_venta(string id_venta)
+        {
+            SqlConnection connection = new SqlConnection(conexionString);
+            connection.Open();
+
+
+            SqlCommand sqlCommand = new SqlCommand("DELETE FROM ventas WHERE id_venta = @idventa;", connection);
+
+            // Agregar los parámetros con los valores del objeto 'venta'
+            sqlCommand.Parameters.AddWithValue("@idventa", id_venta);
+            MessageBox.Show("id_venta", "Éxito");
+
+            sqlCommand.ExecuteNonQuery();
+            MessageBox.Show("Los datos se han borrado correctamente.", "Éxito");
+            connection.Close();
         }
     }
 }

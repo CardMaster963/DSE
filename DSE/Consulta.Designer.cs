@@ -37,6 +37,7 @@
             lblCantidad = new Label();
             btnBuscar = new Button();
             dataGridView2 = new DataGridView();
+            btn_BorrarVenta = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -121,12 +122,24 @@
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.Size = new Size(906, 199);
             dataGridView2.TabIndex = 9;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // btn_BorrarVenta
+            // 
+            btn_BorrarVenta.Location = new Point(92, 491);
+            btn_BorrarVenta.Name = "btn_BorrarVenta";
+            btn_BorrarVenta.Size = new Size(94, 29);
+            btn_BorrarVenta.TabIndex = 10;
+            btn_BorrarVenta.Text = "Borrar";
+            btn_BorrarVenta.UseVisualStyleBackColor = true;
+            btn_BorrarVenta.Click += btn_BorrarVenta_Click;
             // 
             // Consulta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1636, 772);
+            Controls.Add(btn_BorrarVenta);
             Controls.Add(dataGridView2);
             Controls.Add(btnBuscar);
             Controls.Add(lblCantidad);
@@ -156,5 +169,6 @@
         private Button btnBuscar;
         private TextBox txt1;
         private DataGridView dataGridView2;
+        private Button btn_BorrarVenta;
     }
 }

@@ -9,7 +9,7 @@ namespace DSE
 {
     internal class Ventas
     {
-       public int ID {  get; set; }
+       public string ID {  get; set; }
         public int ID_Evento{ get; set; }
         [DataType(DataType.Date)]   
         public DateTime Fecha { get; set; }

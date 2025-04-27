@@ -17,7 +17,9 @@ namespace DSE
         BindingSource bindingSource = new BindingSource();
         BindingSource bindingSourceBusqueda = new BindingSource();
         string comandosql;
-        List<int> seleccionsql = new List<int>();
+        List<int> seleccionsql_Evento = new List<int>();
+        List<string> seleccionsql_venta = new List<string>();
+        public string IdSeleccionadoVenta;
         public int fila_activa;
 
         public Consulta()
@@ -28,14 +30,14 @@ namespace DSE
         {
             DSE_DAO agb = new DSE_DAO();
 
-            (bindingSource.DataSource, seleccionsql) = agb.obtenerEvento();
+            (bindingSource.DataSource, seleccionsql_Evento) = agb.obtenerEvento();
             dataGridView1.DataSource = bindingSource;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DSE_DAO agb = new DSE_DAO();
-            (bindingSource.DataSource, seleccionsql) = agb.Buscar(txt1.Text);
+            (bindingSource.DataSource, seleccionsql_Evento) = agb.Buscar(txt1.Text);
             dataGridView1.DataSource = bindingSource;
 
         }
@@ -45,12 +47,31 @@ namespace DSE
             DataGridView dataGrid = (DataGridView)sender;
             DSE_DAO agb = new DSE_DAO();
             fila_activa = dataGrid.CurrentRow.Index;
-            fila_activa = seleccionsql[fila_activa];
-            bindingSourceBusqueda.DataSource = agb.obtenerVenta(fila_activa);
+            fila_activa = seleccionsql_Evento[fila_activa];
+            (bindingSourceBusqueda.DataSource, seleccionsql_venta) = agb.obtenerVenta(fila_activa);
             dataGridView2.DataSource = bindingSourceBusqueda;
             (lblTotalRes.Text, lblCantidadRes.Text) = agb.total(fila_activa);
         }
 
+        private void btn_BorrarVenta_Click(object sender, EventArgs e)
+        {
+            DSE_DAO agb = new DSE_DAO();
+            DialogResult result = MessageBox.Show("¿Deseas Borrar?", "Pregunta", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Elegiste Sí");
+                agb.borrar_venta(IdSeleccionadoVenta);
+            }
 
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGrid = (DataGridView)sender;
+            DSE_DAO agb = new DSE_DAO();
+            fila_activa = dataGrid.CurrentRow.Index;
+            IdSeleccionadoVenta = seleccionsql_venta[fila_activa];
+
+        }
     }
 }

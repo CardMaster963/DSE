@@ -51,6 +51,7 @@
             // txtId
             // 
             txtId.Location = new Point(293, 53);
+            txtId.MaxLength = 8;
             txtId.Name = "txtId";
             txtId.Size = new Size(125, 27);
             txtId.TabIndex = 3;

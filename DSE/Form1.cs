@@ -1,3 +1,6 @@
+using Microsoft.VisualBasic;
+using System.Windows.Forms;
+
 namespace DSE
 {
     public partial class Form1 : Form
@@ -6,6 +9,8 @@ namespace DSE
         public string ID;
         public string pago;
         public string focus;
+        public string Tipo_Boleto;
+        BindingSource bindingSource = new BindingSource();
         public List<string> Data = new List<string>();
         public Form1(List<string> data)
         {
@@ -13,6 +18,7 @@ namespace DSE
             InitializeComponent();
             txt_Nombre_Evento.Text = data[1];
             txt_Precio_Boleto.Text = data[2];
+            txt_Fecha_Evento.Text = data[5];
         }
         // Esta funcion nos ayudara a agregar valores a una cadena string, para manipularlos despues
         private void numero(string valor)
@@ -29,6 +35,7 @@ namespace DSE
             }
 
         }
+
         private void feria()
         {
             double Monto = Convert.ToInt64(textBox2.Text);
@@ -36,7 +43,7 @@ namespace DSE
             double boletos = Convert.ToInt64(textBox1.Text);
 
             //Imprimimos el total
-            txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
+ 
 
             // |||Aqui falta la conexion con base de datos
             double feria = Monto - (boletos * Precio_Boleto);
@@ -57,7 +64,16 @@ namespace DSE
         // Aqui simplemente centro la atencion en un objeto
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            focus = "textBox1";
+            if (comboBox1.SelectedItem == null)
+            {
+                this.ActiveControl = null;
+                MessageBox.Show("Elige el tipo de boleto", "ERROR");
+            }
+            else
+            {
+                focus = "textBox1";
+            }
+            
         }
 
         private void textBox2_MouseClick(object sender, MouseEventArgs e)
@@ -118,7 +134,47 @@ namespace DSE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            feria();
+            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text))
+            {
+                if (comboBox1.SelectedItem != null)
+                {
+                    List<string> ventadata = new List<string>(6);
+                    DSE_DAO agb = new DSE_DAO();
+                    Ventas venta = new Ventas
+                    {
+                        ID = agb.ObtenerIDVenta(Data[0]),
+                        ID_Evento =Convert.ToInt32(Data[0]),
+                        Fecha = Convert.ToDateTime(Data[5]),
+                        tipo_boleto = Tipo_Boleto,
+                        cantidad = Convert.ToInt32(textBox1.Text),
+                        total = Convert.ToInt32(txtTotal.Text)
+                    };
+                    
+                    bindingSource.DataSource = venta;
+                    listBox1.DataSource = bindingSource;
+                    if(Tipo_Boleto == "general")
+                    {
+                        txtCambio.Text = "Es gratuito";
+                    }
+                    else
+                    {
+                        feria();
+                    }
+                    
+                    agb.insertarVenta(venta);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Elige el tipo de boleto", "ERROR");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("llena todos los campos", "ERROR");
+            }
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -144,17 +200,34 @@ namespace DSE
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(textBox1.Text == "")
+            if (textBox1.Text == "")
             {
                 txtTotal.Text = "";
+                boletos_cant = "";
             }
             else
             {
-            double Precio_Boleto = Convert.ToDouble(Data[3]);
-            double boletos = Convert.ToInt64(textBox1.Text);
+                if(comboBox1.SelectedIndex == 0)
+                {
+                double Precio_Boleto = Convert.ToDouble(Data[3]);
+                double boletos = Convert.ToInt64(textBox1.Text);
+                txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
+                }
+                else if( comboBox1.SelectedIndex == 1){
+                    double Precio_Boleto = 0;
+                    double boletos = Convert.ToInt64(textBox1.Text);
+                    txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
+                }
+                else if(comboBox1.SelectedIndex == 2)
+                {
+                    double Precio_Boleto = Convert.ToDouble(Data[2]);
+                    double boletos = Convert.ToInt64(textBox1.Text);
+                    txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
+                }
 
-            //Imprimimos el total
-            txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
+
+                //Imprimimos el total
+                
             }
 
         }
@@ -165,6 +238,7 @@ namespace DSE
             {
                 textBox1.Text = "0";
             }
+
         }
         private void textBox2_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -172,6 +246,48 @@ namespace DSE
             {
                 textBox2.Text = "0";
             }
+        }
+        
+
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int Seleccion_Tipo_boleto = comboBox1.SelectedIndex;
+            
+            if (Seleccion_Tipo_boleto == 0)
+            {
+                Tipo_Boleto = "taquilla";
+            }
+            else if(Seleccion_Tipo_boleto == 1){
+                Tipo_Boleto = "general";
+            }
+            else if (Seleccion_Tipo_boleto == 2)
+            {
+                Tipo_Boleto = "preventa";
+            }
+            if (textBox1_TextChanged != null)
+            {
+                if (comboBox1.SelectedIndex == 0)
+                {
+                    double Precio_Boleto = Convert.ToDouble(Data[3]);
+                    double boletos = Convert.ToInt64(textBox1.Text);
+                    txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
+                }
+                else if (comboBox1.SelectedIndex == 1)
+                {
+                    double Precio_Boleto = 0;
+                    double boletos = Convert.ToInt64(textBox1.Text);
+                    txtTotal.Text = Convert.ToString(boletos * Precio_Boleto * 0);
+                }
+                else if (comboBox1.SelectedIndex == 2)
+                {
+                    double Precio_Boleto = Convert.ToDouble(Data[2]);
+                    double boletos = Convert.ToInt64(textBox1.Text);
+                    txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
+                }
+            }
+
         }
     }
 }

@@ -58,7 +58,7 @@
             txt_Nombre_Evento = new TextBox();
             txt_Precio_Boleto = new TextBox();
             txt_Fecha_Evento = new TextBox();
-            checkedListBox1 = new CheckedListBox();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // btn1
@@ -158,13 +158,14 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(125, 20);
             textBox1.TabIndex = 9;
+            textBox1.Text = "0";
             textBox1.MouseClick += textBox1_MouseClick;
             textBox1.TextChanged += textBox1_TextChanged;
             textBox1.Validating += textBox1_Validating;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(380, 245);
+            textBox2.Location = new Point(380, 238);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 10;
@@ -219,7 +220,6 @@
             // 
             // txtTotal
             // 
-            txtTotal.Enabled = false;
             txtTotal.Location = new Point(80, 319);
             txtTotal.Name = "txtTotal";
             txtTotal.Size = new Size(125, 27);
@@ -227,7 +227,6 @@
             // 
             // txtCambio
             // 
-            txtCambio.Enabled = false;
             txtCambio.Location = new Point(80, 357);
             txtCambio.Name = "txtCambio";
             txtCambio.Size = new Size(125, 27);
@@ -281,7 +280,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(153, 589);
+            button1.Location = new Point(284, 589);
             button1.Name = "button1";
             button1.Size = new Size(166, 29);
             button1.TabIndex = 26;
@@ -343,21 +342,22 @@
             txt_Fecha_Evento.Size = new Size(125, 20);
             txt_Fecha_Evento.TabIndex = 32;
             // 
-            // checkedListBox1
+            // comboBox1
             // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "taquilla", "preventa", "cortesia" });
-            checkedListBox1.Location = new Point(692, 32);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(150, 70);
-            checkedListBox1.TabIndex = 33;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "taquilla", "cortesia", "preventa" });
+            comboBox1.Location = new Point(544, 116);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 33;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1034, 630);
-            Controls.Add(checkedListBox1);
+            Controls.Add(comboBox1);
             Controls.Add(txt_Fecha_Evento);
             Controls.Add(txt_Precio_Boleto);
             Controls.Add(txt_Nombre_Evento);
@@ -427,5 +427,6 @@
         private TextBox txt_Precio_Boleto;
         private TextBox txt_Fecha_Evento;
         private CheckedListBox checkedListBox1;
+        private ComboBox comboBox1;
     }
 }
