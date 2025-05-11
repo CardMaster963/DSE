@@ -20,6 +20,7 @@ namespace DSE
         List<int> seleccionsql_Evento = new List<int>();
         List<string> seleccionsql_venta = new List<string>();
         public string IdSeleccionadoVenta;
+        public string IdSeleccionadoEvento;
         public int fila_activa;
 
         public Consulta()
@@ -51,6 +52,7 @@ namespace DSE
             (bindingSourceBusqueda.DataSource, seleccionsql_venta) = agb.obtenerVenta(fila_activa);
             dataGridView2.DataSource = bindingSourceBusqueda;
             (lblTotalRes.Text, lblCantidadRes.Text) = agb.total(fila_activa);
+
         }
 
         private void btn_BorrarVenta_Click(object sender, EventArgs e)
@@ -72,6 +74,17 @@ namespace DSE
             fila_activa = dataGrid.CurrentRow.Index;
             IdSeleccionadoVenta = seleccionsql_venta[fila_activa];
 
+        }
+
+        private void btn_BorrarEvento_Click(object sender, EventArgs e)
+        {
+            DSE_DAO agb = new DSE_DAO();
+            DialogResult result = MessageBox.Show("¿Deseas Borrar?", "Pregunta", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Elegiste Sí");
+                agb.borrar_evento(fila_activa);
+            }
         }
     }
 }

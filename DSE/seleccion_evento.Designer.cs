@@ -36,6 +36,7 @@
             listBox1 = new ListBox();
             btn_Alta_Evento = new Button();
             label1 = new Label();
+            btnBD = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -114,11 +115,22 @@
             label1.TabIndex = 30;
             label1.Text = "Has clic en el evento correspondiente: ";
             // 
+            // btnBD
+            // 
+            btnBD.Location = new Point(238, 97);
+            btnBD.Name = "btnBD";
+            btnBD.Size = new Size(198, 65);
+            btnBD.TabIndex = 31;
+            btnBD.Text = "Base de datos";
+            btnBD.UseVisualStyleBackColor = true;
+            btnBD.Click += btnBD_Click;
+            // 
             // seleccion_evento
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1179, 628);
+            Controls.Add(btnBD);
             Controls.Add(label1);
             Controls.Add(btn_Alta_Evento);
             Controls.Add(listBox1);
@@ -144,5 +156,6 @@
         private ListBox listBox1;
         private Button btn_Alta_Evento;
         private Label label1;
+        private Button btnBD;
     }
 }

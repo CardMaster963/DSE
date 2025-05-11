@@ -51,7 +51,6 @@
             btnSalir = new Button();
             btnborrar = new Button();
             listBox1 = new ListBox();
-            button1 = new Button();
             lbl_Nombre_Evento = new Label();
             lbl_Fecha_Evento = new Label();
             lbl_Precio_Boleto = new Label();
@@ -278,16 +277,6 @@
             listBox1.Size = new Size(414, 284);
             listBox1.TabIndex = 25;
             // 
-            // button1
-            // 
-            button1.Location = new Point(284, 589);
-            button1.Name = "button1";
-            button1.Size = new Size(166, 29);
-            button1.TabIndex = 26;
-            button1.Text = "Base de datos";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += Consulta;
-            // 
             // lbl_Nombre_Evento
             // 
             lbl_Nombre_Evento.AutoSize = true;
@@ -364,7 +353,6 @@
             Controls.Add(lbl_Precio_Boleto);
             Controls.Add(lbl_Fecha_Evento);
             Controls.Add(lbl_Nombre_Evento);
-            Controls.Add(button1);
             Controls.Add(listBox1);
             Controls.Add(btnborrar);
             Controls.Add(btnSalir);
@@ -419,7 +407,6 @@
         private Button btnSalir;
         private Button btnborrar;
         private ListBox listBox1;
-        private Button button1;
         private Label lbl_Nombre_Evento;
         private Label lbl_Fecha_Evento;
         private Label lbl_Precio_Boleto;

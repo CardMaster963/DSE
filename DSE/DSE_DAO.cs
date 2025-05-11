@@ -57,7 +57,7 @@ namespace DSE
             connection.Open();
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Parameters.AddWithValue("@busqueda", busqueda);
-            sqlCommand.CommandText = "select * from eventos where id_evento Like @busqueda";
+            sqlCommand.CommandText = "select * from eventos where nombre Like @busqueda";
 
             sqlCommand.Connection = connection;
 
@@ -190,11 +190,12 @@ namespace DSE
         {
             List<string> Data = new List<string>(new string[5]);
             SqlConnection connection = new SqlConnection(conexionString);
+            string checkCapacityQuery = "SELECT capacidad_personas FROM eventos WHERE id_evento = @idPrincipal";
             connection.Open();
-
 
             SqlCommand sqlCommand = new SqlCommand(
                 "INSERT INTO ventas VALUES (@ID, @ID_Evento, @Fecha, @tipo_boleto, @cantidad, @total);", connection);
+            SqlCommand sqlCommandUpdate = new SqlCommand("UPDATE eventos SET capacidad_personas = capacidad_personas - @cantidad  WHERE id_evento = @idPrincipal", connection);
 
             // Agregar los parámetros con los valores del objeto 'venta'
             sqlCommand.Parameters.AddWithValue("@ID", venta.ID);
@@ -203,15 +204,37 @@ namespace DSE
             sqlCommand.Parameters.AddWithValue("@tipo_boleto", venta.tipo_boleto);
             sqlCommand.Parameters.AddWithValue("@cantidad", venta.cantidad);
             sqlCommand.Parameters.AddWithValue("@total", venta.total);
+            sqlCommandUpdate.Parameters.AddWithValue("@idPrincipal", venta.ID_Evento);
+            sqlCommandUpdate.Parameters.AddWithValue("@cantidad", venta.cantidad);
 
-            sqlCommand.ExecuteNonQuery();
-            MessageBox.Show("Los datos se han insertado correctamente.", "Éxito");
+            using (SqlCommand checkCommand = new SqlCommand(checkCapacityQuery, connection))
+            {
+                checkCommand.Parameters.AddWithValue("@idPrincipal", venta.ID_Evento);
+                int capacidad = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+                if (capacidad >= venta.cantidad)
+                {
+                    sqlCommandUpdate.ExecuteNonQuery();
+                    sqlCommand.ExecuteNonQuery();
+                    MessageBox.Show("Los datos se han insertado correctamente.", "Éxito");
+                }
+                else
+                {
+                    MessageBox.Show("ERROR: Capacidad insuficiente. No se puede generar la venta." + capacidad);
+                }
+            }
+
+
+
             connection.Close();
         }
         public String ObtenerIDVenta(string Id_evento)
         {
+
             string query = "SELECT MAX(id_venta) FROM ventas WHERE id_evento = @idPrincipal";
             SqlConnection connection = new SqlConnection(conexionString);
+
+
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -246,6 +269,25 @@ namespace DSE
 
             sqlCommand.ExecuteNonQuery();
             MessageBox.Show("Los datos se han borrado correctamente.", "Éxito");
+            connection.Close();
+        }
+        public void borrar_evento(int id_evento)
+        {
+            SqlConnection connection = new SqlConnection(conexionString);
+            connection.Open();
+
+
+            SqlCommand sqlCommand = new SqlCommand("DELETE FROM eventos WHERE id_evento = @id_evento;", connection);
+
+            SqlCommand sqlCommandBorrarTabla = new SqlCommand("DELETE FROM ventas WHERE id_evento = @id_evento;", connection);
+
+            // Agregar los parámetros con los valores del objeto 'venta'
+            sqlCommand.Parameters.AddWithValue("@id_evento", id_evento);
+            sqlCommandBorrarTabla.Parameters.AddWithValue("@id_evento", id_evento);
+
+            sqlCommand.ExecuteNonQuery();
+            MessageBox.Show("Los datos se han borrado correctamente.", "Éxito");
+            sqlCommandBorrarTabla.ExecuteNonQuery();
             connection.Close();
         }
     }

@@ -194,8 +194,8 @@ namespace DSE
 
         private void Consulta(object sender, EventArgs e)
         {
-            Consulta cn = new Consulta();
-            cn.Show();
+                Consulta cn = new Consulta();
+                cn.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -55,6 +55,10 @@ namespace DSE
             form.Show();
         }
 
-
+        private void btnBD_Click(object sender, EventArgs e)
+        {
+            Consulta cn = new Consulta();
+            cn.Show();
+        }
     }
 }

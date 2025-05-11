@@ -38,6 +38,9 @@
             btnBuscar = new Button();
             dataGridView2 = new DataGridView();
             btn_BorrarVenta = new Button();
+            btn_BorrarEvento = new Button();
+            label3 = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -126,19 +129,49 @@
             // 
             // btn_BorrarVenta
             // 
-            btn_BorrarVenta.Location = new Point(92, 491);
+            btn_BorrarVenta.Location = new Point(47, 491);
             btn_BorrarVenta.Name = "btn_BorrarVenta";
-            btn_BorrarVenta.Size = new Size(94, 29);
+            btn_BorrarVenta.Size = new Size(139, 74);
             btn_BorrarVenta.TabIndex = 10;
-            btn_BorrarVenta.Text = "Borrar";
+            btn_BorrarVenta.Text = "Borrar venta";
             btn_BorrarVenta.UseVisualStyleBackColor = true;
             btn_BorrarVenta.Click += btn_BorrarVenta_Click;
+            // 
+            // btn_BorrarEvento
+            // 
+            btn_BorrarEvento.Location = new Point(47, 381);
+            btn_BorrarEvento.Name = "btn_BorrarEvento";
+            btn_BorrarEvento.Size = new Size(150, 78);
+            btn_BorrarEvento.TabIndex = 11;
+            btn_BorrarEvento.Text = "Borrar evento";
+            btn_BorrarEvento.UseVisualStyleBackColor = true;
+            btn_BorrarEvento.Click += btn_BorrarEvento_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(773, 392);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 20);
+            label3.TabIndex = 14;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(74, 349);
+            label1.Name = "label1";
+            label1.Size = new Size(123, 20);
+            label1.TabIndex = 15;
+            label1.Text = "Boletos vendidos";
             // 
             // Consulta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1636, 772);
+            Controls.Add(label1);
+            Controls.Add(label3);
+            Controls.Add(btn_BorrarEvento);
             Controls.Add(btn_BorrarVenta);
             Controls.Add(dataGridView2);
             Controls.Add(btnBuscar);
@@ -170,5 +203,8 @@
         private TextBox txt1;
         private DataGridView dataGridView2;
         private Button btn_BorrarVenta;
+        private Button btn_BorrarEvento;
+        private Label label3;
+        private Label label1;
     }
 }

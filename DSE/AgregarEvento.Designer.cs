@@ -107,8 +107,9 @@
             mskFecha.Mask = "00/00/0000";
             mskFecha.Name = "mskFecha";
             mskFecha.Size = new Size(125, 27);
-            mskFecha.TabIndex = 12;
+            mskFecha.TabIndex = 8;
             mskFecha.ValidatingType = typeof(DateTime);
+            mskFecha.Click += mskFecha_Click;
             // 
             // mskHora
             // 
@@ -118,6 +119,7 @@
             mskHora.Size = new Size(125, 27);
             mskHora.TabIndex = 13;
             mskHora.ValidatingType = typeof(DateTime);
+            mskHora.Click += mskHora_Click;
             // 
             // lblEvento
             // 
