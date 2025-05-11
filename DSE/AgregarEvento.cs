@@ -36,6 +36,9 @@ namespace DSE
             agb.insertarEvento(evento);
         }
 
+        private void AgregarEvento_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

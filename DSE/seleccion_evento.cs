@@ -54,7 +54,5 @@ namespace DSE
             AgregarEvento form = new AgregarEvento();
             form.Show();
         }
-
-
     }
 }

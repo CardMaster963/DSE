@@ -144,17 +144,17 @@ namespace DSE
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(textBox1.Text == "")
+            if (textBox1.Text == "")
             {
                 txtTotal.Text = "";
             }
             else
             {
-            double Precio_Boleto = Convert.ToDouble(Data[3]);
-            double boletos = Convert.ToInt64(textBox1.Text);
+                double Precio_Boleto = Convert.ToDouble(Data[3]);
+                double boletos = Convert.ToInt64(textBox1.Text);
 
-            //Imprimimos el total
-            txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
+                //Imprimimos el total
+                txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
             }
 
         }
@@ -172,6 +172,11 @@ namespace DSE
             {
                 textBox2.Text = "0";
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

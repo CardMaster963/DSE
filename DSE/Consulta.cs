@@ -51,6 +51,9 @@ namespace DSE
             (lblTotalRes.Text, lblCantidadRes.Text) = agb.total(fila_activa);
         }
 
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
