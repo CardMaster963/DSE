@@ -60,5 +60,10 @@ namespace DSE
             Consulta cn = new Consulta();
             cn.Show();
         }
+
+        private void seleccion_evento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

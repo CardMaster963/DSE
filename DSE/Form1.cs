@@ -43,7 +43,7 @@ namespace DSE
             double boletos = Convert.ToInt64(textBox1.Text);
 
             //Imprimimos el total
- 
+
 
             // |||Aqui falta la conexion con base de datos
             double feria = Monto - (boletos * Precio_Boleto);
@@ -73,7 +73,7 @@ namespace DSE
             {
                 focus = "textBox1";
             }
-            
+
         }
 
         private void textBox2_MouseClick(object sender, MouseEventArgs e)
@@ -143,16 +143,16 @@ namespace DSE
                     Ventas venta = new Ventas
                     {
                         ID = agb.ObtenerIDVenta(Data[0]),
-                        ID_Evento =Convert.ToInt32(Data[0]),
+                        ID_Evento = Convert.ToInt32(Data[0]),
                         Fecha = Convert.ToDateTime(Data[5]),
                         tipo_boleto = Tipo_Boleto,
                         cantidad = Convert.ToInt32(textBox1.Text),
                         total = Convert.ToInt32(txtTotal.Text)
                     };
-                    
+
                     bindingSource.DataSource = venta;
                     listBox1.DataSource = bindingSource;
-                    if(Tipo_Boleto == "general")
+                    if (Tipo_Boleto == "general")
                     {
                         txtCambio.Text = "Es gratuito";
                     }
@@ -160,9 +160,9 @@ namespace DSE
                     {
                         feria();
                     }
-                    
+
                     agb.insertarVenta(venta);
-                    
+
                 }
                 else
                 {
@@ -194,8 +194,8 @@ namespace DSE
 
         private void Consulta(object sender, EventArgs e)
         {
-                Consulta cn = new Consulta();
-                cn.Show();
+            Consulta cn = new Consulta();
+            cn.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -207,18 +207,19 @@ namespace DSE
             }
             else
             {
-                if(comboBox1.SelectedIndex == 0)
+                if (comboBox1.SelectedIndex == 0)
                 {
-                double Precio_Boleto = Convert.ToDouble(Data[3]);
-                double boletos = Convert.ToInt64(textBox1.Text);
-                txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
+                    double Precio_Boleto = Convert.ToDouble(Data[3]);
+                    double boletos = Convert.ToInt64(textBox1.Text);
+                    txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
                 }
-                else if( comboBox1.SelectedIndex == 1){
+                else if (comboBox1.SelectedIndex == 1)
+                {
                     double Precio_Boleto = 0;
                     double boletos = Convert.ToInt64(textBox1.Text);
                     txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
                 }
-                else if(comboBox1.SelectedIndex == 2)
+                else if (comboBox1.SelectedIndex == 2)
                 {
                     double Precio_Boleto = Convert.ToDouble(Data[2]);
                     double boletos = Convert.ToInt64(textBox1.Text);
@@ -227,7 +228,7 @@ namespace DSE
 
 
                 //Imprimimos el total
-                
+
             }
 
         }
@@ -247,19 +248,20 @@ namespace DSE
                 textBox2.Text = "0";
             }
         }
-        
+
 
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int Seleccion_Tipo_boleto = comboBox1.SelectedIndex;
-            
+
             if (Seleccion_Tipo_boleto == 0)
             {
                 Tipo_Boleto = "taquilla";
             }
-            else if(Seleccion_Tipo_boleto == 1){
+            else if (Seleccion_Tipo_boleto == 1)
+            {
                 Tipo_Boleto = "general";
             }
             else if (Seleccion_Tipo_boleto == 2)
@@ -287,6 +289,11 @@ namespace DSE
                     txtTotal.Text = Convert.ToString(boletos * Precio_Boleto);
                 }
             }
+
+        }
+
+        private void lblPago_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -86,5 +86,10 @@ namespace DSE
                 agb.borrar_evento(fila_activa);
             }
         }
+
+        private void Consulta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
