@@ -151,7 +151,6 @@ namespace DSE
                     };
 
                     bindingSource.DataSource = venta;
-                    listBox1.DataSource = bindingSource;
                     if (Tipo_Boleto == "general")
                     {
                         txtCambio.Text = "Es gratuito";
@@ -192,11 +191,7 @@ namespace DSE
             boletos_cant = "";
         }
 
-        private void Consulta(object sender, EventArgs e)
-        {
-            Consulta cn = new Consulta();
-            cn.Show();
-        }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -293,6 +288,16 @@ namespace DSE
         }
 
         private void lblPago_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

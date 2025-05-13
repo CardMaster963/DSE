@@ -87,9 +87,6 @@ namespace DSE
             }
         }
 
-        private void Consulta_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

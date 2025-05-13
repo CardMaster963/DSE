@@ -51,12 +51,11 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(67, 67, 67);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(269, 38);
-            dataGridView1.Margin = new Padding(4);
+            dataGridView1.Location = new Point(215, 30);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1111, 499);
+            dataGridView1.Size = new Size(889, 399);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellContentClick;
             // 
@@ -65,10 +64,9 @@
             btnConsulta.BackColor = Color.FromArgb(67, 67, 67);
             btnConsulta.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btnConsulta.ForeColor = Color.CornflowerBlue;
-            btnConsulta.Location = new Point(32, 170);
-            btnConsulta.Margin = new Padding(4);
+            btnConsulta.Location = new Point(26, 136);
             btnConsulta.Name = "btnConsulta";
-            btnConsulta.Size = new Size(210, 55);
+            btnConsulta.Size = new Size(168, 44);
             btnConsulta.TabIndex = 1;
             btnConsulta.Text = "Consulta";
             btnConsulta.UseVisualStyleBackColor = false;
@@ -79,10 +77,9 @@
             txt1.BackColor = Color.FromArgb(67, 67, 67);
             txt1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             txt1.ForeColor = Color.CornflowerBlue;
-            txt1.Location = new Point(32, 267);
-            txt1.Margin = new Padding(4);
+            txt1.Location = new Point(26, 214);
             txt1.Name = "txt1";
-            txt1.Size = new Size(210, 32);
+            txt1.Size = new Size(169, 28);
             txt1.TabIndex = 2;
             // 
             // lblTotalRes
@@ -91,10 +88,9 @@
             lblTotalRes.BackColor = Color.FromArgb(67, 67, 67);
             lblTotalRes.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lblTotalRes.ForeColor = Color.CornflowerBlue;
-            lblTotalRes.Location = new Point(186, 447);
-            lblTotalRes.Margin = new Padding(4, 0, 4, 0);
+            lblTotalRes.Location = new Point(108, 424);
             lblTotalRes.Name = "lblTotalRes";
-            lblTotalRes.Size = new Size(0, 25);
+            lblTotalRes.Size = new Size(0, 20);
             lblTotalRes.TabIndex = 3;
             // 
             // lblCantidadRes
@@ -103,10 +99,9 @@
             lblCantidadRes.BackColor = Color.FromArgb(67, 67, 67);
             lblCantidadRes.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lblCantidadRes.ForeColor = Color.CornflowerBlue;
-            lblCantidadRes.Location = new Point(176, 429);
-            lblCantidadRes.Margin = new Padding(4, 0, 4, 0);
+            lblCantidadRes.Location = new Point(85, 361);
             lblCantidadRes.Name = "lblCantidadRes";
-            lblCantidadRes.Size = new Size(0, 25);
+            lblCantidadRes.Size = new Size(0, 20);
             lblCantidadRes.TabIndex = 4;
             // 
             // lblTotal
@@ -114,10 +109,9 @@
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lblTotal.ForeColor = Color.CornflowerBlue;
-            lblTotal.Location = new Point(32, 404);
-            lblTotal.Margin = new Padding(4, 0, 4, 0);
+            lblTotal.Location = new Point(26, 323);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(210, 25);
+            lblTotal.Size = new Size(177, 20);
             lblTotal.TabIndex = 5;
             lblTotal.Text = "Dinero Total Conseguido";
             // 
@@ -126,10 +120,9 @@
             lblCantidad.AutoSize = true;
             lblCantidad.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lblCantidad.ForeColor = Color.CornflowerBlue;
-            lblCantidad.Location = new Point(32, 490);
-            lblCantidad.Margin = new Padding(4, 0, 4, 0);
+            lblCantidad.Location = new Point(26, 392);
             lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(147, 25);
+            lblCantidad.Size = new Size(122, 20);
             lblCantidad.TabIndex = 6;
             lblCantidad.Text = "Boletos vendidos";
             // 
@@ -138,10 +131,9 @@
             btnBuscar.BackColor = Color.FromArgb(67, 67, 67);
             btnBuscar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btnBuscar.ForeColor = Color.CornflowerBlue;
-            btnBuscar.Location = new Point(32, 309);
-            btnBuscar.Margin = new Padding(4);
+            btnBuscar.Location = new Point(26, 247);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(210, 45);
+            btnBuscar.Size = new Size(168, 36);
             btnBuscar.TabIndex = 7;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -151,11 +143,10 @@
             // 
             dataGridView2.BackgroundColor = Color.FromArgb(67, 67, 67);
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(269, 561);
-            dataGridView2.Margin = new Padding(4);
+            dataGridView2.Location = new Point(215, 449);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(1111, 156);
+            dataGridView2.Size = new Size(889, 184);
             dataGridView2.TabIndex = 9;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -164,10 +155,9 @@
             btn_BorrarVenta.BackColor = Color.FromArgb(67, 67, 67);
             btn_BorrarVenta.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn_BorrarVenta.ForeColor = Color.CornflowerBlue;
-            btn_BorrarVenta.Location = new Point(39, 662);
-            btn_BorrarVenta.Margin = new Padding(4);
+            btn_BorrarVenta.Location = new Point(31, 530);
             btn_BorrarVenta.Name = "btn_BorrarVenta";
-            btn_BorrarVenta.Size = new Size(203, 55);
+            btn_BorrarVenta.Size = new Size(162, 44);
             btn_BorrarVenta.TabIndex = 10;
             btn_BorrarVenta.Text = "Borrar venta";
             btn_BorrarVenta.UseVisualStyleBackColor = false;
@@ -178,10 +168,9 @@
             btn_BorrarEvento.BackColor = Color.FromArgb(67, 67, 67);
             btn_BorrarEvento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn_BorrarEvento.ForeColor = Color.CornflowerBlue;
-            btn_BorrarEvento.Location = new Point(39, 599);
-            btn_BorrarEvento.Margin = new Padding(4);
+            btn_BorrarEvento.Location = new Point(31, 479);
             btn_BorrarEvento.Name = "btn_BorrarEvento";
-            btn_BorrarEvento.Size = new Size(203, 55);
+            btn_BorrarEvento.Size = new Size(162, 44);
             btn_BorrarEvento.TabIndex = 11;
             btn_BorrarEvento.Text = "Borrar evento";
             btn_BorrarEvento.UseVisualStyleBackColor = false;
@@ -190,10 +179,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(966, 490);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(773, 392);
             label3.Name = "label3";
-            label3.Size = new Size(0, 25);
+            label3.Size = new Size(0, 20);
             label3.TabIndex = 14;
             // 
             // label1
@@ -201,28 +189,28 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             label1.ForeColor = Color.CornflowerBlue;
-            label1.Location = new Point(68, 570);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(54, 456);
             label1.Name = "label1";
-            label1.Size = new Size(147, 25);
+            label1.Size = new Size(122, 20);
             label1.TabIndex = 15;
             label1.Text = "Boletos vendidos";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Dkan_Music_Live;
-            pictureBox1.Location = new Point(32, 27);
+            pictureBox1.Location = new Point(26, 22);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(210, 119);
+            pictureBox1.Size = new Size(168, 95);
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             // 
             // Consulta
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(36, 36, 36);
-            ClientSize = new Size(1406, 735);
+            ClientSize = new Size(1195, 645);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(label3);
@@ -237,10 +225,8 @@
             Controls.Add(txt1);
             Controls.Add(btnConsulta);
             Controls.Add(dataGridView1);
-            Margin = new Padding(4);
             Name = "Consulta";
             Text = "Consulta";
-            Load += Consulta_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

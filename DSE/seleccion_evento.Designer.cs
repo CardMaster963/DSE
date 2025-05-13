@@ -47,10 +47,9 @@
             txt1.BackColor = Color.FromArgb(67, 67, 67);
             txt1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             txt1.ForeColor = Color.CornflowerBlue;
-            txt1.Location = new Point(529, 53);
-            txt1.Margin = new Padding(4);
+            txt1.Location = new Point(423, 42);
             txt1.Name = "txt1";
-            txt1.Size = new Size(181, 31);
+            txt1.Size = new Size(146, 27);
             txt1.TabIndex = 13;
             // 
             // lblIdEvento
@@ -58,10 +57,9 @@
             lblIdEvento.AutoSize = true;
             lblIdEvento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             lblIdEvento.ForeColor = Color.CornflowerBlue;
-            lblIdEvento.Location = new Point(556, 25);
-            lblIdEvento.Margin = new Padding(4, 0, 4, 0);
+            lblIdEvento.Location = new Point(445, 20);
             lblIdEvento.Name = "lblIdEvento";
-            lblIdEvento.Size = new Size(119, 25);
+            lblIdEvento.Size = new Size(97, 20);
             lblIdEvento.TabIndex = 19;
             lblIdEvento.Text = "Clave evento";
             // 
@@ -71,10 +69,9 @@
             btnSeleccionEvento.Enabled = false;
             btnSeleccionEvento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnSeleccionEvento.ForeColor = Color.CornflowerBlue;
-            btnSeleccionEvento.Location = new Point(1239, 25);
-            btnSeleccionEvento.Margin = new Padding(4);
+            btnSeleccionEvento.Location = new Point(991, 20);
             btnSeleccionEvento.Name = "btnSeleccionEvento";
-            btnSeleccionEvento.Size = new Size(220, 154);
+            btnSeleccionEvento.Size = new Size(176, 123);
             btnSeleccionEvento.TabIndex = 25;
             btnSeleccionEvento.Text = "Caja";
             btnSeleccionEvento.UseVisualStyleBackColor = false;
@@ -85,12 +82,11 @@
             dataGridView1.BackgroundColor = Color.FromArgb(67, 67, 67);
             dataGridView1.BorderStyle = BorderStyle.Fixed3D;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 251);
-            dataGridView1.Margin = new Padding(4);
+            dataGridView1.Location = new Point(23, 201);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1430, 464);
+            dataGridView1.Size = new Size(1144, 371);
             dataGridView1.TabIndex = 26;
             dataGridView1.CellClick += dataGridView1_CellContentClick;
             // 
@@ -99,10 +95,9 @@
             btnBuscar.BackColor = Color.FromArgb(67, 67, 67);
             btnBuscar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnBuscar.ForeColor = Color.CornflowerBlue;
-            btnBuscar.Location = new Point(330, 25);
-            btnBuscar.Margin = new Padding(4);
+            btnBuscar.Location = new Point(264, 20);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(181, 59);
+            btnBuscar.Size = new Size(145, 47);
             btnBuscar.TabIndex = 27;
             btnBuscar.Text = "Mostrar eventos";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -114,11 +109,9 @@
             listBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             listBox1.ForeColor = Color.CornflowerBlue;
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 25;
-            listBox1.Location = new Point(731, 25);
-            listBox1.Margin = new Padding(4);
+            listBox1.Location = new Point(585, 20);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(484, 154);
+            listBox1.Size = new Size(388, 124);
             listBox1.TabIndex = 28;
             // 
             // btn_Alta_Evento
@@ -126,10 +119,9 @@
             btn_Alta_Evento.BackColor = Color.FromArgb(67, 67, 67);
             btn_Alta_Evento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btn_Alta_Evento.ForeColor = Color.CornflowerBlue;
-            btn_Alta_Evento.Location = new Point(330, 120);
-            btn_Alta_Evento.Margin = new Padding(4);
+            btn_Alta_Evento.Location = new Point(264, 96);
             btn_Alta_Evento.Name = "btn_Alta_Evento";
-            btn_Alta_Evento.Size = new Size(181, 59);
+            btn_Alta_Evento.Size = new Size(145, 47);
             btn_Alta_Evento.TabIndex = 29;
             btn_Alta_Evento.Text = "Dar de alta evento";
             btn_Alta_Evento.UseVisualStyleBackColor = false;
@@ -140,10 +132,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label1.ForeColor = Color.CornflowerBlue;
-            label1.Location = new Point(29, 222);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(23, 178);
             label1.Name = "label1";
-            label1.Size = new Size(334, 25);
+            label1.Size = new Size(272, 20);
             label1.TabIndex = 30;
             label1.Text = "Has clic en el evento correspondiente: ";
             // 
@@ -152,10 +143,9 @@
             btnBD.BackColor = Color.FromArgb(67, 67, 67);
             btnBD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnBD.ForeColor = Color.CornflowerBlue;
-            btnBD.Location = new Point(529, 120);
-            btnBD.Margin = new Padding(4);
+            btnBD.Location = new Point(423, 96);
             btnBD.Name = "btnBD";
-            btnBD.Size = new Size(181, 59);
+            btnBD.Size = new Size(145, 47);
             btnBD.TabIndex = 31;
             btnBD.Text = "Base de datos";
             btnBD.UseVisualStyleBackColor = false;
@@ -164,18 +154,19 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Dkan_Music_Live;
-            pictureBox1.Location = new Point(29, 25);
+            pictureBox1.Location = new Point(23, 20);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(161, 154);
+            pictureBox1.Size = new Size(196, 123);
             pictureBox1.TabIndex = 32;
             pictureBox1.TabStop = false;
             // 
             // seleccion_evento
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(36, 36, 36);
-            ClientSize = new Size(1485, 742);
+            ClientSize = new Size(1188, 594);
             Controls.Add(pictureBox1);
             Controls.Add(btnBD);
             Controls.Add(label1);
@@ -186,7 +177,6 @@
             Controls.Add(btnSeleccionEvento);
             Controls.Add(lblIdEvento);
             Controls.Add(txt1);
-            Margin = new Padding(4);
             Name = "seleccion_evento";
             Text = "seleccion_evento";
             Load += seleccion_evento_Load;

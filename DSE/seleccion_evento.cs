@@ -18,9 +18,16 @@ namespace DSE
         BindingSource bindingSourceBusqueda = new BindingSource();
 
         public List<string> data = new List<string>(new string[5]);
-        public seleccion_evento()
+        public seleccion_evento(string user)
         {
             InitializeComponent();
+            if(user != "Admin")
+            {
+                btnBD.Enabled = true;
+                btn_Alta_Evento.Enabled = true;
+                btnBD.Visible = false;
+                btn_Alta_Evento.Visible = false;
+            }
         }
 
         private void btnSeleccionEvento_Click(object sender, EventArgs e)
