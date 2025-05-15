@@ -42,7 +42,7 @@
             txtUsuario.BackColor = Color.FromArgb(67, 67, 67);
             txtUsuario.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             txtUsuario.ForeColor = Color.CornflowerBlue;
-            txtUsuario.Location = new Point(214, 261);
+            txtUsuario.Location = new Point(207, 258);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(125, 28);
             txtUsuario.TabIndex = 0;
@@ -52,7 +52,7 @@
             txtContraseña.BackColor = Color.FromArgb(67, 67, 67);
             txtContraseña.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             txtContraseña.ForeColor = Color.CornflowerBlue;
-            txtContraseña.Location = new Point(214, 310);
+            txtContraseña.Location = new Point(207, 307);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '*';
             txtContraseña.Size = new Size(125, 28);
@@ -63,7 +63,7 @@
             btnLogin.BackColor = Color.FromArgb(67, 67, 67);
             btnLogin.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btnLogin.ForeColor = Color.CornflowerBlue;
-            btnLogin.Location = new Point(130, 363);
+            btnLogin.Location = new Point(123, 360);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(208, 40);
             btnLogin.TabIndex = 2;
@@ -76,7 +76,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             label1.ForeColor = Color.CornflowerBlue;
-            label1.Location = new Point(130, 267);
+            label1.Location = new Point(123, 264);
             label1.Name = "label1";
             label1.Size = new Size(62, 20);
             label1.TabIndex = 3;
@@ -87,7 +87,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             label2.ForeColor = Color.CornflowerBlue;
-            label2.Location = new Point(104, 313);
+            label2.Location = new Point(97, 310);
             label2.Name = "label2";
             label2.Size = new Size(88, 20);
             label2.TabIndex = 4;
@@ -96,8 +96,8 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.DML__250x250_;
-            pictureBox1.Location = new Point(104, 27);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Location = new Point(97, 24);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(272, 215);
             pictureBox1.TabIndex = 5;
@@ -109,13 +109,15 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(36, 36, 36);
-            ClientSize = new Size(491, 471);
+            ClientSize = new Size(462, 482);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnLogin);
             Controls.Add(txtContraseña);
             Controls.Add(txtUsuario);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "Login";
             Text = "login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

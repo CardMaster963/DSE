@@ -67,7 +67,7 @@
             btn1.BackColor = Color.FromArgb(67, 67, 67);
             btn1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn1.ForeColor = Color.CornflowerBlue;
-            btn1.Location = new Point(377, 219);
+            btn1.Location = new Point(397, 225);
             btn1.Name = "btn1";
             btn1.Size = new Size(94, 29);
             btn1.TabIndex = 0;
@@ -80,7 +80,7 @@
             btn2.BackColor = Color.FromArgb(67, 67, 67);
             btn2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn2.ForeColor = Color.CornflowerBlue;
-            btn2.Location = new Point(478, 219);
+            btn2.Location = new Point(498, 225);
             btn2.Name = "btn2";
             btn2.Size = new Size(94, 29);
             btn2.TabIndex = 1;
@@ -93,7 +93,7 @@
             btn3.BackColor = Color.FromArgb(67, 67, 67);
             btn3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn3.ForeColor = Color.CornflowerBlue;
-            btn3.Location = new Point(578, 219);
+            btn3.Location = new Point(598, 225);
             btn3.Name = "btn3";
             btn3.Size = new Size(94, 29);
             btn3.TabIndex = 2;
@@ -106,7 +106,7 @@
             btn4.BackColor = Color.FromArgb(67, 67, 67);
             btn4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn4.ForeColor = Color.CornflowerBlue;
-            btn4.Location = new Point(378, 255);
+            btn4.Location = new Point(398, 261);
             btn4.Name = "btn4";
             btn4.Size = new Size(94, 29);
             btn4.TabIndex = 3;
@@ -119,7 +119,7 @@
             btn5.BackColor = Color.FromArgb(67, 67, 67);
             btn5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn5.ForeColor = Color.CornflowerBlue;
-            btn5.Location = new Point(478, 255);
+            btn5.Location = new Point(498, 261);
             btn5.Name = "btn5";
             btn5.Size = new Size(94, 29);
             btn5.TabIndex = 4;
@@ -132,7 +132,7 @@
             btn6.BackColor = Color.FromArgb(67, 67, 67);
             btn6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn6.ForeColor = Color.CornflowerBlue;
-            btn6.Location = new Point(578, 255);
+            btn6.Location = new Point(598, 261);
             btn6.Name = "btn6";
             btn6.Size = new Size(94, 29);
             btn6.TabIndex = 5;
@@ -145,7 +145,7 @@
             btn7.BackColor = Color.FromArgb(67, 67, 67);
             btn7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn7.ForeColor = Color.CornflowerBlue;
-            btn7.Location = new Point(378, 290);
+            btn7.Location = new Point(398, 296);
             btn7.Name = "btn7";
             btn7.Size = new Size(94, 29);
             btn7.TabIndex = 6;
@@ -158,7 +158,7 @@
             btn8.BackColor = Color.FromArgb(67, 67, 67);
             btn8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn8.ForeColor = Color.CornflowerBlue;
-            btn8.Location = new Point(478, 290);
+            btn8.Location = new Point(498, 296);
             btn8.Name = "btn8";
             btn8.Size = new Size(94, 29);
             btn8.TabIndex = 7;
@@ -171,7 +171,7 @@
             btn9.BackColor = Color.FromArgb(67, 67, 67);
             btn9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn9.ForeColor = Color.CornflowerBlue;
-            btn9.Location = new Point(578, 290);
+            btn9.Location = new Point(598, 296);
             btn9.Name = "btn9";
             btn9.Size = new Size(94, 29);
             btn9.TabIndex = 8;
@@ -184,13 +184,14 @@
             textBox1.BackColor = Color.FromArgb(67, 67, 67);
             textBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             textBox1.ForeColor = Color.CornflowerBlue;
-            textBox1.Location = new Point(377, 172);
+            textBox1.Location = new Point(397, 178);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(139, 28);
             textBox1.TabIndex = 9;
             textBox1.Text = "0";
             textBox1.MouseClick += textBox1_MouseClick;
             textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.KeyPress += textBox1_KeyPress;
             textBox1.Validating += textBox1_Validating;
             // 
             // textBox2
@@ -198,11 +199,12 @@
             textBox2.BackColor = Color.FromArgb(67, 67, 67);
             textBox2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             textBox2.ForeColor = Color.CornflowerBlue;
-            textBox2.Location = new Point(536, 172);
+            textBox2.Location = new Point(556, 178);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(135, 28);
             textBox2.TabIndex = 10;
             textBox2.MouseClick += textBox2_MouseClick;
+            textBox2.KeyPress += textBox2_KeyPress;
             textBox2.Validating += textBox2_Validating;
             // 
             // btn0
@@ -210,7 +212,7 @@
             btn0.BackColor = Color.FromArgb(67, 67, 67);
             btn0.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btn0.ForeColor = Color.CornflowerBlue;
-            btn0.Location = new Point(478, 325);
+            btn0.Location = new Point(498, 331);
             btn0.Name = "btn0";
             btn0.Size = new Size(94, 29);
             btn0.TabIndex = 11;
@@ -221,7 +223,7 @@
             // lblMsgError
             // 
             lblMsgError.AutoSize = true;
-            lblMsgError.Location = new Point(12, 368);
+            lblMsgError.Location = new Point(32, 374);
             lblMsgError.Name = "lblMsgError";
             lblMsgError.Size = new Size(0, 20);
             lblMsgError.TabIndex = 13;
@@ -231,7 +233,7 @@
             btnGuardar.BackColor = Color.FromArgb(67, 67, 67);
             btnGuardar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btnGuardar.ForeColor = Color.CornflowerBlue;
-            btnGuardar.Location = new Point(578, 325);
+            btnGuardar.Location = new Point(598, 331);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(94, 29);
             btnGuardar.TabIndex = 14;
@@ -244,7 +246,7 @@
             lblCant_Bolet.AutoSize = true;
             lblCant_Bolet.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lblCant_Bolet.ForeColor = Color.CornflowerBlue;
-            lblCant_Bolet.Location = new Point(377, 142);
+            lblCant_Bolet.Location = new Point(398, 148);
             lblCant_Bolet.Name = "lblCant_Bolet";
             lblCant_Bolet.Size = new Size(146, 20);
             lblCant_Bolet.TabIndex = 15;
@@ -255,7 +257,7 @@
             lblPago.AutoSize = true;
             lblPago.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lblPago.ForeColor = Color.CornflowerBlue;
-            lblPago.Location = new Point(555, 142);
+            lblPago.Location = new Point(556, 148);
             lblPago.Name = "lblPago";
             lblPago.Size = new Size(103, 20);
             lblPago.TabIndex = 16;
@@ -267,7 +269,7 @@
             txtTotal.BackColor = Color.FromArgb(67, 67, 67);
             txtTotal.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             txtTotal.ForeColor = Color.CornflowerBlue;
-            txtTotal.Location = new Point(448, 395);
+            txtTotal.Location = new Point(468, 401);
             txtTotal.Name = "txtTotal";
             txtTotal.Size = new Size(223, 28);
             txtTotal.TabIndex = 19;
@@ -277,7 +279,7 @@
             txtCambio.BackColor = Color.FromArgb(67, 67, 67);
             txtCambio.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             txtCambio.ForeColor = Color.CornflowerBlue;
-            txtCambio.Location = new Point(448, 429);
+            txtCambio.Location = new Point(468, 435);
             txtCambio.Name = "txtCambio";
             txtCambio.Size = new Size(223, 28);
             txtCambio.TabIndex = 20;
@@ -287,7 +289,7 @@
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lblTotal.ForeColor = Color.CornflowerBlue;
-            lblTotal.Location = new Point(382, 397);
+            lblTotal.Location = new Point(402, 403);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(43, 20);
             lblTotal.TabIndex = 21;
@@ -298,7 +300,7 @@
             lblCambio.AutoSize = true;
             lblCambio.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lblCambio.ForeColor = Color.CornflowerBlue;
-            lblCambio.Location = new Point(382, 431);
+            lblCambio.Location = new Point(402, 437);
             lblCambio.Name = "lblCambio";
             lblCambio.Size = new Size(62, 20);
             lblCambio.TabIndex = 22;
@@ -309,7 +311,7 @@
             btnSalir.BackColor = Color.FromArgb(67, 67, 67);
             btnSalir.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btnSalir.ForeColor = Color.CornflowerBlue;
-            btnSalir.Location = new Point(24, 423);
+            btnSalir.Location = new Point(44, 429);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(126, 34);
             btnSalir.TabIndex = 23;
@@ -322,7 +324,7 @@
             btnborrar.BackColor = Color.FromArgb(67, 67, 67);
             btnborrar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             btnborrar.ForeColor = Color.CornflowerBlue;
-            btnborrar.Location = new Point(378, 325);
+            btnborrar.Location = new Point(398, 331);
             btnborrar.Name = "btnborrar";
             btnborrar.Size = new Size(94, 29);
             btnborrar.TabIndex = 24;
@@ -335,7 +337,7 @@
             lbl_Nombre_Evento.AutoSize = true;
             lbl_Nombre_Evento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lbl_Nombre_Evento.ForeColor = Color.CornflowerBlue;
-            lbl_Nombre_Evento.Location = new Point(24, 175);
+            lbl_Nombre_Evento.Location = new Point(44, 181);
             lbl_Nombre_Evento.Name = "lbl_Nombre_Evento";
             lbl_Nombre_Evento.Size = new Size(140, 20);
             lbl_Nombre_Evento.TabIndex = 27;
@@ -346,7 +348,7 @@
             lbl_Fecha_Evento.AutoSize = true;
             lbl_Fecha_Evento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lbl_Fecha_Evento.ForeColor = Color.CornflowerBlue;
-            lbl_Fecha_Evento.Location = new Point(24, 272);
+            lbl_Fecha_Evento.Location = new Point(44, 278);
             lbl_Fecha_Evento.Name = "lbl_Fecha_Evento";
             lbl_Fecha_Evento.Size = new Size(50, 20);
             lbl_Fecha_Evento.TabIndex = 28;
@@ -357,7 +359,7 @@
             lbl_Precio_Boleto.AutoSize = true;
             lbl_Precio_Boleto.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             lbl_Precio_Boleto.ForeColor = Color.CornflowerBlue;
-            lbl_Precio_Boleto.Location = new Point(24, 223);
+            lbl_Precio_Boleto.Location = new Point(44, 229);
             lbl_Precio_Boleto.Name = "lbl_Precio_Boleto";
             lbl_Precio_Boleto.Size = new Size(122, 20);
             lbl_Precio_Boleto.TabIndex = 29;
@@ -369,7 +371,7 @@
             txt_Nombre_Evento.Enabled = false;
             txt_Nombre_Evento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             txt_Nombre_Evento.ForeColor = Color.CornflowerBlue;
-            txt_Nombre_Evento.Location = new Point(184, 176);
+            txt_Nombre_Evento.Location = new Point(204, 182);
             txt_Nombre_Evento.Name = "txt_Nombre_Evento";
             txt_Nombre_Evento.Size = new Size(126, 28);
             txt_Nombre_Evento.TabIndex = 30;
@@ -380,7 +382,7 @@
             txt_Precio_Boleto.Enabled = false;
             txt_Precio_Boleto.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             txt_Precio_Boleto.ForeColor = Color.CornflowerBlue;
-            txt_Precio_Boleto.Location = new Point(184, 224);
+            txt_Precio_Boleto.Location = new Point(204, 230);
             txt_Precio_Boleto.Name = "txt_Precio_Boleto";
             txt_Precio_Boleto.Size = new Size(126, 28);
             txt_Precio_Boleto.TabIndex = 31;
@@ -391,7 +393,7 @@
             txt_Fecha_Evento.Enabled = false;
             txt_Fecha_Evento.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             txt_Fecha_Evento.ForeColor = Color.CornflowerBlue;
-            txt_Fecha_Evento.Location = new Point(184, 269);
+            txt_Fecha_Evento.Location = new Point(204, 275);
             txt_Fecha_Evento.Name = "txt_Fecha_Evento";
             txt_Fecha_Evento.Size = new Size(126, 28);
             txt_Fecha_Evento.TabIndex = 32;
@@ -403,7 +405,7 @@
             comboBox1.ForeColor = Color.CornflowerBlue;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "taquilla", "cortesia", "preventa" });
-            comboBox1.Location = new Point(184, 315);
+            comboBox1.Location = new Point(204, 321);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(126, 28);
             comboBox1.TabIndex = 33;
@@ -412,10 +414,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Dkan_Music_Live;
-            pictureBox1.Location = new Point(24, 25);
+            pictureBox1.Location = new Point(44, 31);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(129, 117);
+            pictureBox1.Size = new Size(155, 117);
             pictureBox1.TabIndex = 34;
             pictureBox1.TabStop = false;
             // 
@@ -424,7 +426,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             label1.ForeColor = Color.CornflowerBlue;
-            label1.Location = new Point(24, 325);
+            label1.Location = new Point(44, 331);
             label1.Name = "label1";
             label1.Size = new Size(105, 20);
             label1.TabIndex = 35;
@@ -436,7 +438,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(36, 36, 36);
-            ClientSize = new Size(699, 488);
+            ClientSize = new Size(740, 510);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(comboBox1);
@@ -468,6 +470,8 @@
             Controls.Add(btn3);
             Controls.Add(btn2);
             Controls.Add(btn1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

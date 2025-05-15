@@ -21,7 +21,7 @@ namespace DSE
         public seleccion_evento(string user)
         {
             InitializeComponent();
-            if(user != "Admin")
+            if (user != "Admin")
             {
                 btnBD.Enabled = true;
                 btn_Alta_Evento.Enabled = true;
@@ -50,7 +50,7 @@ namespace DSE
             fila_activa = dataGrid.CurrentRow.Index;
             data = agb.eventoData(seleccionsql[fila_activa]);
             bindingSourceBusqueda.DataSource = agb.eventoData(seleccionsql[fila_activa]);
-            listBox1.DataSource = bindingSourceBusqueda;
+
             btnSeleccionEvento.Enabled = true;
 
 
@@ -69,6 +69,16 @@ namespace DSE
         }
 
         private void seleccion_evento_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

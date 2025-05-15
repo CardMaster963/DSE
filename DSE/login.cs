@@ -40,10 +40,10 @@ namespace DSE
                         {
                             user = "Admin"; 
                         }
-                        Login log = new Login();
-                        log.Close();
+                        
                         seleccion_evento form = new seleccion_evento(user);
                         form.Show();
+
                         // Aquí puedes abrir un nuevo formulario o realizar alguna acción adicional
                     }
                     else

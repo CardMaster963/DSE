@@ -195,6 +195,7 @@ namespace DSE
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
             if (textBox1.Text == "")
             {
                 txtTotal.Text = "";
@@ -300,6 +301,22 @@ namespace DSE
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear la tecla
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear la tecla
+            }
         }
     }
 }

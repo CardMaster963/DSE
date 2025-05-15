@@ -49,13 +49,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.BackgroundColor = Color.FromArgb(67, 67, 67);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(215, 30);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(889, 399);
+            dataGridView1.Size = new Size(1095, 382);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellContentClick;
             // 
@@ -77,7 +78,7 @@
             txt1.BackColor = Color.FromArgb(67, 67, 67);
             txt1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic);
             txt1.ForeColor = Color.CornflowerBlue;
-            txt1.Location = new Point(26, 214);
+            txt1.Location = new Point(26, 213);
             txt1.Name = "txt1";
             txt1.Size = new Size(169, 28);
             txt1.TabIndex = 2;
@@ -141,12 +142,13 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
             dataGridView2.BackgroundColor = Color.FromArgb(67, 67, 67);
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(215, 449);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(889, 184);
+            dataGridView2.Size = new Size(1095, 229);
             dataGridView2.TabIndex = 9;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -198,10 +200,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Dkan_Music_Live;
-            pictureBox1.Location = new Point(26, 22);
+            pictureBox1.Location = new Point(25, 11);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(168, 95);
+            pictureBox1.Size = new Size(168, 120);
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             // 
@@ -210,7 +212,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(36, 36, 36);
-            ClientSize = new Size(1195, 645);
+            ClientSize = new Size(1350, 714);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(label3);
@@ -225,6 +227,8 @@
             Controls.Add(txt1);
             Controls.Add(btnConsulta);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "Consulta";
             Text = "Consulta";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
